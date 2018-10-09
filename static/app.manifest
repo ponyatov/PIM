@@ -1,0 +1,9 @@
+{
+	"short_name": "PIM/js",
+	"name": "Object FORTH & PIM /js",
+	"icons": [ { "src": "/static/planning.png", "type": "image/png" } ],	
+	"orientation": "portrait",
+	"display": "standalone",
+	"background_color": "black",
+	"theme_color": "black"
+}
