@@ -4,8 +4,8 @@
 	margin: 0; 
 }
 
-pre		 { width:100%; } /* white-space: pre-wrap; word-break: break-all; } */
-textarea { width:100%; } /* caret-color:red; } */
+/* pre		 { width:100%; } /* white-space: pre-wrap; word-break: break-all; } */
+textarea { width:100%; caret-color:red; }
 button   { width:100%; background: darkslategray; height: 11vmin; }
 
 #cmd { position: absolute; bottom:0; width:100%; }
@@ -13,3 +13,21 @@ button   { width:100%; background: darkslategray; height: 11vmin; }
 #stack,#pad	{ color:cyan; }
 #words		{ color:lightblue; }
 #error		{ color:yellow; }
+
+#slider {
+	width: 100%;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	/*display: flex;*/
+}
+
+#slider>* {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #444444;
+	width: auto;
+	min-height: 50%;
+	display: inline-block;
+}
