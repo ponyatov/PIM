@@ -1,41 +1,11 @@
 #!/usr/bin/env python2.7
 # -*- coding: utf-8 -*-
-
 ## @file
 ## @brief httpd server using Flask
 
-## @brief core generic object
-class Qbject:
-    def __init__(self,V):
-        self.type  = self.__class__.__name__.lower()
-        self.value = V
-    def __repr__(self):
-        return self.dump()
-    def dump(self,depth=0):
-        return self.head()
-    def head(self,prefix=''):
-        return '%s<%s:%s>'%(prefix,self.type,self.value)
+import os,sys
 
-## @brief primitive
-class Primitive(Qbject): pass
-
-## @brief symbol names sw and model entities 
-class Symbol(Primitive): pass
-
-## @brief number
-class Number(Primitive): pass
-
-## @brief string
-class String(Primitive): pass
-
-## @brief data container
-class Container(Qbject): pass
-
-## @brief LIFO stack
-class Stack(Container): pass
-
-## @brief associative (key/value) array 
-class Map(Container): pass
+from SYM import *
 
 ## @brief client-side gramma for PEG.js
 PEGJS = String('''// PEG.js ''')
@@ -50,8 +20,10 @@ S = Stack('DATA')
 W = Map('FORTH')
 
 import flask
+import flask_wtf
 
 app = flask.Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY') or 'you-will-never-guess'
 
 @app.route('/')
 def index():
