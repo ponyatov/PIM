@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+
+{% block body %}
+
+<form method=post novalidate>
+	{{ form.hidden_tag() }}
+	<table cellpadding=15px width=100%>
+		<tr>
+			<td>{{ form.login.label }}</td>
+			<td>{{ form.login() }}</td>
+		</tr>
+		<tr>
+			<td>{{ form.passwd.label }}</td>
+			<td>{{ form.passwd() }}</td>
+		</tr>
+		<tr>
+			<td>{{ form.cookie() }}</td>
+			<td>{{ form.submit() }}</td>
+		</tr>
+	</table>
+</form>
+
+{% endblock %}
