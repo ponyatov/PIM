@@ -48,7 +48,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         flask.flash('login: %s with %s'%(form.login.data,form.passwd.data))
-        return flask.redirect('/')
+        return flask.redirect(flask.url_for('index'))
     return flask.render_template('login.html',form=form)
 
 app.run(debug=True,host='0.0.0.0',port=8888)
