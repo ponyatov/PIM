@@ -7,11 +7,19 @@
 	<table cellpadding=15px width=100%>
 		<tr>
 			<td>{{ form.login.label }}</td>
-			<td>{{ form.login() }}</td>
-		</tr>
+			<td>{{ form.login() }}
+            {% for error in form.login.errors %}
+            <span style="color: #FF8888;">[{{ error }}]</span>
+            {% endfor %}
+            </td>
+        </tr>
 		<tr>
 			<td>{{ form.passwd.label }}</td>
-			<td>{{ form.passwd() }}</td>
+			<td>{{ form.passwd() }}
+            {% for error in form.passwd.errors %}
+            <span style="color: #FF8888;">[{{ error }}]</span>
+            {% endfor %}
+            </td>
 		</tr>
 		<tr>
 			<td>{{ form.cookie() }}</td>
