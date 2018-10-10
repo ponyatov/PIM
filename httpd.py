@@ -5,27 +5,34 @@
 
 import os,sys
 
-from SYM import *
-from attr import validators
-
-## @brief client-side gramma for PEG.js
-PEGJS = String('''// PEG.js ''')
-
-## @brief client-side command field template
-PAD = String('\ FORTH command')
-
-## @brief ForthVM stack
-S = Stack('DATA')
-
-## @brief ForthVM vocabulary
-W = Map('FORTH')
+from FORTH import *
 
 import flask
-import flask_wtf,wtforms
 
 app = flask.Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY') \
-                            or 'you-will-never-guess'
+
+class Config:
+    SECRET_KEY = os.environ.get('FLASK_SECRET_KEY') or \
+                'you-will-never-guess'
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    SQLALCHEMY_DATABASE_URI = os.environ.get('PIM_DATABASE_URL') or \
+                            'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+                            
+app.config.from_object(Config)
+
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+class User(db.Model):
+    id = db.Column(db.Integer,primary_key = True)
+
+print User()
+
+import flask_wtf,wtforms
 
 @app.route('/')
 def index():
