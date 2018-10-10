@@ -29,7 +29,10 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 class User(db.Model):
-    id = db.Column(db.Integer,primary_key = True)
+    id = db.Column(db.SmallInteger,primary_key = True)
+    login = db.Column(db.String(32), index=True, unique=True, nullable=False)
+    email = db.Column(db.String(128), index=True, unique=True, nullable=True)
+    pwdhash = db.Column(db.String(128), nullable=False)
 
 print User()
 
