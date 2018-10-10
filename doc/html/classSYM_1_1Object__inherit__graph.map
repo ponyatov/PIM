@@ -1,0 +1,12 @@
+<map id="SYM.Object" name="SYM.Object">
+<area shape="rect" id="node2" href="$classSYM_1_1Container.html" title="data container " alt="" coords="99,189,210,267"/>
+<area shape="rect" id="node5" href="$classSYM_1_1Primitive.html" title="primitive " alt="" coords="288,189,395,267"/>
+<area shape="rect" id="node3" href="$classSYM_1_1Map.html" title="associative (key/value) array " alt="" coords="5,315,85,392"/>
+<area shape="rect" id="node4" href="$classSYM_1_1Stack.html" title="LIFO stack. " alt="" coords="110,315,199,392"/>
+<area shape="rect" id="node6" href="$classSYM_1_1Number.html" title="number " alt="" coords="224,315,325,392"/>
+<area shape="rect" id="node10" href="$classSYM_1_1String.html" title="string " alt="" coords="350,315,439,392"/>
+<area shape="rect" id="node11" href="$classSYM_1_1Symbol.html" title="symbol names sw and model entities " alt="" coords="464,315,563,392"/>
+<area shape="rect" id="node7" href="$classSYM_1_1Integer.html" title="integer number " alt="" coords="227,440,322,517"/>
+<area shape="rect" id="node8" href="$classSYM_1_1Bin.html" title="bit string " alt="" coords="187,565,261,643"/>
+<area shape="rect" id="node9" href="$classSYM_1_1Hex.html" title="machine hex number " alt="" coords="286,565,365,643"/>
+</map>

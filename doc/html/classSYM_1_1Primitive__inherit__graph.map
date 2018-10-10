@@ -1,0 +1,9 @@
+<map id="SYM.Primitive" name="SYM.Primitive">
+<area shape="rect" id="node3" href="$classSYM_1_1Number.html" title="number " alt="" coords="43,315,144,392"/>
+<area shape="rect" id="node7" href="$classSYM_1_1String.html" title="string " alt="" coords="169,315,258,392"/>
+<area shape="rect" id="node8" href="$classSYM_1_1Symbol.html" title="symbol names sw and model entities " alt="" coords="283,315,381,392"/>
+<area shape="rect" id="node2" href="$classSYM_1_1Object.html" title="core generic object " alt="" coords="167,5,260,141"/>
+<area shape="rect" id="node4" href="$classSYM_1_1Integer.html" title="integer number " alt="" coords="46,440,141,517"/>
+<area shape="rect" id="node5" href="$classSYM_1_1Bin.html" title="bit string " alt="" coords="5,565,80,643"/>
+<area shape="rect" id="node6" href="$classSYM_1_1Hex.html" title="machine hex number " alt="" coords="105,565,183,643"/>
+</map>
