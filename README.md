@@ -1,7 +1,12 @@
 # PIM Forth
 ## Python/Flask powered server-side PIM & Planning system
+### with object Forth as script layer
 
-* with object Forth as script layer
+(c) Dmitry Ponyatov <<dponyatov@gmail.com>> , All rights reserved
+
+manual: https://ponyatov.github.io/PIM/
+
+github: https://github.com/ponyatov/PIM
 
 ### Personal Information Manager:
 
