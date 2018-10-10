@@ -10,4 +10,6 @@ $ sudo apt install python2.7
 
 ```
 $ sudo apt install python-flask python-flaskext.wtf
+$ sudo pip install --upgrade flask-bootstrap
 ```
+ 
