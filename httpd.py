@@ -46,7 +46,6 @@ class LoginForm(flask_wtf.FlaskForm):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    flask.flash(str(form))
     if form.validate_on_submit():
         flask.flash('login: %s with %s'%(form.login.data,form.passwd.data))
         return flask.redirect('/')
