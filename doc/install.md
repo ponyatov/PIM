@@ -24,3 +24,7 @@ $ sudo apt install \
 $ sudo pip install --upgrade \
 	flask-script flask-migrate
 ```
+
+```
+$ FLASK_APP=httpd.py flask db init
+```

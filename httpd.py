@@ -58,4 +58,5 @@ def login():
         return flask.redirect(flask.url_for('index'))
     return flask.render_template('login.html',form=form)
 
-app.run(debug=True,host='0.0.0.0',port=8888)
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0',port=8888)
