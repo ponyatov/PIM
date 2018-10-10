@@ -1,9 +1,0 @@
-<map id="httpd.Qbject" name="httpd.Qbject">
-<area shape="rect" id="node2" href="$classhttpd_1_1Container.html" title="data container " alt="" coords="99,189,210,267"/>
-<area shape="rect" id="node5" href="$classhttpd_1_1Primitive.html" title="primitive " alt="" coords="288,189,395,267"/>
-<area shape="rect" id="node3" href="$classhttpd_1_1Map.html" title="associative (key/value) array " alt="" coords="5,315,85,392"/>
-<area shape="rect" id="node4" href="$classhttpd_1_1Stack.html" title="LIFO stack. " alt="" coords="110,315,199,392"/>
-<area shape="rect" id="node6" href="$classhttpd_1_1Number.html" title="number " alt="" coords="224,315,325,392"/>
-<area shape="rect" id="node7" href="$classhttpd_1_1String.html" title="string " alt="" coords="350,315,439,392"/>
-<area shape="rect" id="node8" href="$classhttpd_1_1Symbol.html" title="symbol names sw and model entities " alt="" coords="464,315,563,392"/>
-</map>
