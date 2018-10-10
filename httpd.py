@@ -33,8 +33,16 @@ class User(db.Model):
     login = db.Column(db.String(32), index=True, unique=True, nullable=False)
     email = db.Column(db.String(128), index=True, unique=True, nullable=True)
     pwdhash = db.Column(db.String(128), nullable=False)
+    
+    def __init__(self,login,passwd,email=None):
+        self.login = login
+        self.email = email
+        self.pwdhash = str(hash(passwd))
+        
+    def __repr__(self):
+        return '%s / %s '%(self.login,self.email)
 
-print User()
+print User('ponyatov','gjyznjd','dponyatov@gmail.com')
 
 import flask_wtf,wtforms
 
