@@ -12,13 +12,17 @@ import flask
 app = flask.Flask(__name__)
 
 class Config:
-    SECRET_KEY = os.environ.get('FLASK_SECRET_KEY') or \
-                open('/etc/machine-id').readline()[:-1]
-    SQLALCHEMY_DATABASE_URI = os.environ.get('PIM_DATABASE_URL') or \
-                            'mysql://flask:%s@127.0.0.1/PIM' % SECRET_KEY
-#     basedir = os.path.abspath(os.path.dirname(__file__))
-#                             'sqlite:///' + os.path.join(basedir, 'app.db')
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+	try:
+	    SECRET_KEY = os.environ.get('FLASK_SECRET_KEY') or \
+	                open('/etc/machine-id').readline()[:-1]
+	    SQLALCHEMY_DATABASE_URI = os.environ.get('PIM_DATABASE_URL') or \
+	                            'mysql://flask:%s@127.0.0.1/PIM' % SECRET_KEY
+	except IOError:
+		SECRET_KEY = 'Windoze'
+		basedir = os.path.abspath(os.path.dirname(__file__))
+		SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+	
+	SQLALCHEMY_TRACK_MODIFICATIONS = False
                             
 app.config.from_object(Config)
 
