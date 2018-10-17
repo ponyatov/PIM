@@ -3,7 +3,7 @@
 ## @file
 ## @brief httpd server using Flask
 
-import os,sys
+import os,sys,datetime
 
 from FORTH import *
 
@@ -37,6 +37,7 @@ class User(db.Model):
     login = db.Column(db.String(32), index=True, unique=True, nullable=False)
     email = db.Column(db.String(128), index=True, unique=True, nullable=True)
     pwdhash = db.Column(db.String(128), nullable=False)
+    commands = db.relationship('Command', backref='author', lazy='dynamic')
     
     def __init__(self,login,passwd,email=None):
         self.login = login
@@ -46,7 +47,13 @@ class User(db.Model):
     def __repr__(self):
         return '%s / %s '%(self.login,self.email)
 
-print User('ponyatov','gjyznjd','dponyatov@gmail.com')
+# print User('ponyatov','gjyznjd','dponyatov@gmail.com')
+
+class Command(db.Model):
+    id = db.Column(db.SmallInteger,primary_key = True)
+    ts = db.Column(db.DateTime, index=True, default=datetime.datetime.utcnow)
+    body = db.Column(db.String(0x100))
+    user = db.Column(db.SmallInteger,db.ForeignKey('user.id'))
 
 import flask_wtf,wtforms
 
